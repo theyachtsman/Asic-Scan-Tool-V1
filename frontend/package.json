@@ -1,0 +1,81 @@
+{
+  "name": "asic-scan-tool",
+  "private": true,
+  "version": "1.0.0",
+  "description": "ASIC Miner Discovery and Management Tool",
+  "main": "dist-electron/main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:electron": "concurrently \"vite\" \"cross-env NODE_ENV=development electron .\"",
+    "build": "tsc -b && vite build",
+    "build:electron": "tsc -p tsconfig.electron.json && vite build && electron-builder",
+    "build:win": "tsc -p tsconfig.electron.json && vite build && electron-builder --win",
+    "build:linux": "tsc -p tsconfig.electron.json && vite build && electron-builder --linux",
+    "preview": "vite preview",
+    "electron:compile": "tsc -p tsconfig.electron.json",
+    "lint": "eslint ."
+  },
+  "build": {
+    "appId": "com.asicscantool.app",
+    "productName": "ASIC Scan Tool",
+    "directories": {
+      "output": "../dist"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "../backend",
+        "to": "backend",
+        "filter": ["**/*", "!__pycache__", "!*.pyc", "!.env"]
+      }
+    ],
+    "win": {
+      "target": [{"target": "nsis", "arch": ["x64"]}],
+      "icon": "public/icon.ico"
+    },
+    "linux": {
+      "target": [{"target": "AppImage", "arch": ["x64"]}],
+      "icon": "public/icon.png",
+      "category": "Network"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "public/icon.ico",
+      "installerHeaderIcon": "public/icon.ico"
+    }
+  },
+  "dependencies": {
+    "@tanstack/react-table": "^8.21.3",
+    "axios": "^1.13.5",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.574.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "recharts": "^3.7.0",
+    "tailwind-merge": "^3.4.1",
+    "zustand": "^5.0.11"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^24.10.13",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "electron": "^40.4.1",
+    "electron-builder": "^26.8.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.48.0",
+    "vite": "^7.3.1"
+  }
+}

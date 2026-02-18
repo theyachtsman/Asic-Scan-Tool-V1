@@ -1,0 +1,143 @@
+Notes for Asic Discovery debug
+
+Power values are not being displayed on the miners.
+
+when i scan miners i dont want them to auto add, i want to a step in place to choose which miners to add based on the scan results
+
+some miner models are pulling unkown or incorrect brand, IE whatsminers and Avalon.
+
+
+
+
+
+
+
+
+
+There are Unknown status miners, they are all http: and when i go to their url, they are WhatsMiner M20S M20S.HB14.H3-V16.P21-H8M14S69140409K10851-V04-192102E
+
+add the ability for a user to add and save IP ranges to the search. after they are saved, you can choose which range to use for your search. When the search completes it adds the miners to the table so you can see the results. then if a new scan network search is performed i want the previous miners from the previous search to drop from table and then only the new search results will appear in the table. Basically i want the table to update at every search call with the new results.
+
+Top alert banner messages need to auto disappear after 30 seconds. When the TH goes over 2,000 TH I want it to show in GH and if GH goes over 1000 then i want to show it in EX hash rate. The dashboard when it shows ip addresses for miners they need to be linkable. Hashboard status on the dashboard needs to show more info about the hasboard health. currently you can only get the temps per chip if you hover and get the tool tip, i want it displayed. Also, I want all of the miners that were added during the search to appear there. Also lets make a new page in the navigation for the Hashboard status and have it list the miners with their hashboard status full information on display. searchable and dashboard like 
+
+
+
+
+The adding miner pop up showed up but did not show any progress. it did complete when it was done though.
+
+Avalon miners specifically AvalonMiner 15XP-209 and all of the avalons are actually not pulling the right data and are showing up as Bitmain brand.
+
+On the dashboard only show 10 Hashboards info, make the hasboards title linked to the hashboard page we made.
+
+
+
+
+
+
+
+
+In miner table when you click a miner to drop down its full info lets add a button that can pull the logs for that individual miner ip and display in a box the last 20 lines of the logs.
+
+Change time on top banner alert to 5 seconds and fade away.
+
+
+The miner add progress bar went half way and stopped but still added the miners. I dont want to see steps there, i want to see the bar and then show me the countdown out of the found miners until it finishes. example 1/200 then 2/200 etc
+
+
+
+
+
+
+The avalons are still showing as bitmain devices. look into that further. maybe Avalon api need
+
+
+Saved scan ranges should only show 4 and then use a scroll box to scroll down. Make it so that they can be sorted by alphabet.
+
+The banner alert should not be on a block, it should be layered on top on a dif axis.
+
+
+
+
+Avalon miners still show as Brand Bitmain and Model Antminer. It is not seeing the correct Avalon information still.
+
+Add export to csv feature on miners page.
+
+Show all the saved ranges, but only have 4 visible in a box, and the rest can be scrolled down to them. now it just says +2 more, i need it to just list them all and use a scroll bar
+
+when scan for miners process gets to 100% it hangs for a bit, i want them to show up quickly, even if i change concurrency it doesn't make a diff. if i change concurrency then the search is faster but still hangs on 100%
+
+
+
+
+
+
+
+Global refresh at top of page does not refresh any data
+
+Scanning still gets to 100% and doesn't show anything just spins, i can see in the console it is loading the miners found, but then the scan fails and doesn't show me any miners it found on the page. Scan progress is empty after the scan completes. 
+
+
+
+
+
+
+
+
+Avalon Model and Canaan Brand is now showing correctly. It is not pulling the hashrate, it is pulling the temps correctly. there is no board data and when i click pull logs from the details i get CGMiner error count: {'STATUS': [{'STATUS': 'E', 'When': 103191, 'Code': 14, 'Msg': 'Invalid command'}], 'id': 1}
+
+
+
+Refresh at top right of page does not refresh the miners. the small refresh in the miner details does refresh.
+
+Scanner when it hits all miners found the bar goes back to halfway and then scans more and shows the incorrect data progress data. 
+
+Avalon canaan is not showing the Hashrate, MAC, or power reading, or fans or fan rpm. it does show temps
+
+
+
+Refresh does not work still, only in the miner details does it work, no where else does that top of the screen refresh work.
+
+Scan progress doesn't show found number while the search is on going.
+
+Avalons still do not show hashrate, mac, power, or fans. Logs are working on avalons now.
+
+
+
+
+
+
+
+
+add ability to add multiple saved ranges in the network scan
+
+when the scan is scanning and does its second part where it pulls the stats, can the scan progress show real time data in a box to show info is still being pulled. or add a qualifier that says that stage 1 is the scan and then stage 2 would be the data pull. that way the user knows whats going on while the scan is happening.
+
+On the avalons, i can see the Avg hashrate just not the RT Hashrate that shows 0.00
+
+
+
+
+
+refresh selected is working correctly. the refresh all at the top is not working
+
+Cant see Avalon Power readings, hashrate is now working correctly.
+
+Identifying miners lit up too soon, change the term Identifying Miners to Populating Miner Data
+
+Need ability to add multiple saved ranges to the IP scan ranges so it can search two or more saved ranges at once.
+
+
+
+
+
+
+
+
+
+Populating data lit up at the end of network sweep, do not light up populating miner data until it actually starts populating the miner data.
+
+
+
+
+
+
